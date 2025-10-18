@@ -1,0 +1,15 @@
+
+package:
+  name: remote-ffi
+
+  dep-sets:
+  - name: default-dev
+    deps: 
+    - name: pytest
+      src: pypi
+    - name: pytest-asyncio
+      src: pypi
+    - name: libffi
+      url: https://github.com/libffi/libffi/releases/download/v3.4.5/libffi-3.4.5.tar.gz
+    - name: gtest
+      url: https://github.com/google/googletest/releases/download/v1.17.0/googletest-1.17.0.tar.gz
