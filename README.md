@@ -1,5 +1,9 @@
 # Remote FFI
 
+**Platform Support:**  
+remote-ffi supports Linux, Windows, and macOS.  
+On macOS, the build system automatically links against libffi.dylib.
+
 The `remote-ffi` library provides a lightweight multi-transport mechanism 
 for remote procedure call between two processes. 
 
@@ -19,7 +23,3 @@ The use model is, conceptually, very simple:
 A core assumption of the library is that each endpoint knows the signature 
 of the functions. In other words, the library provides no real mechanism to
 publish and/or introspect the signature of functions.
-
-
-
-

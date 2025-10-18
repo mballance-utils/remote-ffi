@@ -10,7 +10,14 @@ ExternalProject_Add(libffi_external
     INSTALL_COMMAND make install
     BUILD_IN_SOURCE 1
 )
-add_subdirectory(packages/gtest)
+include(ExternalProject)
+ExternalProject_Add(gtest_external
+    SOURCE_DIR ${CMAKE_SOURCE_DIR}/packages/gtest
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/gtest-install
+    BUILD_COMMAND $(MAKE)
+    INSTALL_COMMAND $(MAKE) install
+    BUILD_IN_SOURCE 1
+)
 
 # Library
 add_subdirectory(src)
